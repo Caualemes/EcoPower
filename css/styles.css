@@ -483,7 +483,6 @@ nav ul li a:hover::after {
 /* Seção Parceiro Destaque - Versão Aprimorada */
 
 .parceiros{
-  border: 3px solid greenyellow;
   height: 100%;
   display: block;
 }
@@ -493,7 +492,6 @@ nav ul li a:hover::after {
   border-radius: 10px;
   padding: 60px 40px;
   margin: 2% 0;
-  border: 2px solid;
 }
 
 .parceiro-content {
@@ -549,7 +547,6 @@ nav ul li a:hover::after {
 /* Seção Parceiros EcoPower */
 .parceiros-ecopower {
   text-align: center;
-  border: 2px solid red;
   margin-top: 0%;
 }
 
