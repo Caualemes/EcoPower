@@ -647,7 +647,7 @@ nav ul li a:hover::after {
 
 .sobre-image img {
   width: 100%;
-  height: clamp(20rem, 100ch, 28rem);
+  height: auto;
   display: block;
 }
 
@@ -808,9 +808,25 @@ footer {
   font-size: 0.9rem;
 }
 
+.only-desktop {
+  display: inline;
+}
+
+.only-mobile {
+    display: none;
+}
+
 /* Responsividade Celular */
 
 @media (max-width: 576px) {
+
+.only-mobile {
+    display: inline;
+}
+
+  .only-desktop {
+    display: none;
+  }
   
 /* Topbar */
 
@@ -847,12 +863,10 @@ footer {
     z-index: 998;
   }
 
-/* Hero Section */
 
-  /* Hero Section */
 /* Hero Section */
 .hero {
-  background: linear-gradient(to bottom, #2ECC71 50%, white 65%);
+  background: linear-gradient(to bottom, #2ECC71 30%, #2ECC71 40%, white 30%, white 100%);
   height: 95vh;
   min-height: -webkit-fill-available;
   padding: 0;
@@ -861,41 +875,24 @@ footer {
 }
 
 .hero-container {
+  display: flex;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
   height: 100%; /* Ocupa toda a altura do .hero */
   position: relative; /* Permite posicionamento absoluto interno */
-  border: 2px solid red; /* Só pra debug, pode remover depois */
 }
 
 /* Título e subtítulo na parte verde */
 .hero-header {
-  padding-top: 5%; /* Ajuste conforme necessário */
+  padding-top: 10%; /* Ajuste conforme necessário */
 }
 
 /* Conteúdo principal na parte branca */
 .hero-main-content {
-  margin-top: 10%; /* Empurra pra parte branca */
+  margin-top: 15%; /* Empurra pra parte branca */
   max-width: 50%; /* Evita que o texto cubra a imagem */
-}
-
-/* Imagem do ZéZé encostada no final */
-.hero-image-wrapper {
-  position: absolute;
-  width: 50%;
-  right: 0;
-  left: 55%;
-  bottom: 0; /* Grudado no fim */
-  border: 2px solid black; /* Debug */
-}
-
-.hero-image {
-  width: 100%;
-  height: auto;
-  display: flex;
-  transform: translateX(20%); /* Ajuste fino */
 }
 
 /* Ajustes para o texto e CTA */
@@ -903,10 +900,78 @@ footer {
   margin-left: 10%;
 }
 
+.hero-title {
+    font-size: clamp(2.0rem, 3vw, 2.8rem) !important;
+    text-align: center;
+    text-transform: none;
+    line-height: 1.3;
+    padding-top: clamp(15%, 20%, 25%);
+  }
+
+.hero-subtitle {
+  font-size: clamp(1.0rem, 2.0vw, 1.5rem) !important;
+  font-weight: 400;
+  color: #fff;
+}
+.hero-top{
+  height: 40%;
+  display: block;
+  justify-content: center;
+}
+
+.hero-under{
+  height: clamp(25%, 30%, 50%);
+  justify-content: center;
+  padding-top: 1.5%;
+  margin: 0px 15px 0px 0px;
+}
+.hero-tagline {
+  color: #2c3e50;
+  font-size: clamp(1.2rem, 1.3rem, 1.7rem) !important;
+  margin-bottom: 5vw;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+.hero-undertag{
+  font-size: clamp(0.5rem, 1rem ,2.0rem);
+  margin-bottom: 2%;
+  text-align: center;
+  margin-bottom: clamp(1vw, 8vw, 10vw);
+}
+
+.hero-cta {
+  display: inline-block;
+  background: #2ECC71;
+  color: white;
+  padding: 1.2vw 3.0vw;
+  border-radius: 50px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: clamp(0.8rem, 1.2vw, 1rem);
+  transition: all 0.3s;
+  box-shadow: 0 0.5vw 1.5vw rgba(0,0,0,0.2);
+  margin-bottom: 4.1vw;
+}
+
+.hero-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0.8vw 2vw rgba(0,0,0,0.3);
+}
+
+.hero-image {
+  width: clamp(100%, 120%, 140%);
+  height: auto;
+  display:flex;
+  transform: translateX(clamp(100%, 140%, 160%));
+}
+
 .ambassador-badge {
   position: absolute;
   left: 15%;
   bottom: 5%;
+  transform: translateX(clamp(100%, 120%, 140%));
 }
 
   .projetos-grid,
@@ -1068,11 +1133,12 @@ footer {
   line-height: 1.6;
   color: #555;
   margin-bottom: 20px;
-  text-align: center;
+  text-align: justify;
 }
 
 .sobre-image img {
   width: 100%;
+  height: auto;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
